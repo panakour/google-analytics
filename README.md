@@ -1,4 +1,4 @@
-[![StyleCI](https://styleci.io/repos/77060885/shield?branch=master)](https://styleci.io/repos/77060885)
+[![StyleCI](https://styleci.io/repos/77175016/shield?branch=master)](https://styleci.io/repos/77175016)
 [![Latest Stable Version](https://poser.pugx.org/panakour/analytics/v/stable)](https://packagist.org/packages/panakour/analytics)
 [![Total Downloads](https://poser.pugx.org/panakour/analytics/downloads)](https://packagist.org/packages/panakour/analytics)
 [![License](https://poser.pugx.org/panakour/analytics/license)](https://packagist.org/packages/panakour/analytics)
