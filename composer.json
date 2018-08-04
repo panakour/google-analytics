@@ -10,13 +10,23 @@
         }
     ],
     "require": {
-        "php" : "^7.0",
-        "illuminate/support": "~5.3",
+        "php": "^7.1",
+        "illuminate/support": "~5.5.0|~5.6.0",
         "google/apiclient": "^2.1"
     },
     "autoload": {
         "psr-4": {
             "Panakour\\Analytics\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Panakour\\Analytics\\GoogleAnalyticsServiceProvider"
+            ],
+            "aliases": {
+                "Analytics": "Panakour\\Analytics\\Facades\\Analytics"
+            }
         }
     }
 }
