@@ -59,7 +59,7 @@ class Analytics implements \Panakour\Analytics\Contracts\Analytics
         ];
     }
 
-    public function setDimensionFilter(string $dimensionName, string $operator, string $expression)
+    public function setDimensionFilter(string $dimensionName, string $operator, $expression)
     {
         $this->analytics[] = [
             'method'     => 'setDimensionFilter',

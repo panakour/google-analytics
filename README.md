@@ -67,7 +67,7 @@ Analytics::setDateRange('2016-10-01', '2016-11-25');
 Analytics::setMaxResults(20);
 Analytics::setMetrics(['ga:entrances', 'ga:pageviews', 'ga:bounceRate']);
 Analytics::setDimension(['ga:pagePath', 'ga:pageTitle']);
-Analytics::setDimensionFilter('ga:pagePath', 'REGEXP', 'i-want-to-get-all-data-that-has-this-page-path');
+Analytics::setDimensionFilter('ga:pagePath', 'REGEXP', '/i-want-to-get-all-data-that-has-this-page-path');
 Analytics::setOrder('ga:pageviews', 'VALUE', 'DESCENDING');
 return Analytics::get();
 ```
@@ -75,6 +75,9 @@ return Analytics::get();
 `setMetrics` and `setDimension` methods accept an array containing the wanted metrics and dimension. Available [metrics and dimensions](https://developers.google.com/analytics/devguides/reporting/core/dimsmets)
 
 `setDimensionFilter` accept 3 parameters. First parameter get the dimension name in which you want to filter analytics data. Second parameter get the [operator](https://developers.google.com/analytics/devguides/reporting/core/v4/rest/v4/reports/batchGet#operator) (REGEXP, BEGINS_WITH, ENDS_WITH and more) you want. Third parameter get the expression. For example if you want to get all analytics data in which the page path include `play` or `simple` words you can use: `Analytics::setDimensionFilter('ga:pagePath', 'REGEXP', '(\/play\/|\/simple\/)');`
+
+If you want to get analytics data for multiple pages in a single request by their exact paths, you can use the 'IN_LIST' operator and pass an array of paths as the third parameter. E.g. 
+`Analytics::setDimensionFilter('ga:pagePath', 'IN_LIST', ['/i-want-data-for-this-path', '/and/this-path-too']);`
 
 `setOrder` method accept 3 parameters. First parameter get the name in which you want to order the data. Second get [OrderType](https://developers.google.com/analytics/devguides/reporting/core/v4/rest/v4/reports/batchGet#ordertype) usually `VALUE`. Third get the [SortOrder](https://developers.google.com/analytics/devguides/reporting/core/v4/rest/v4/reports/batchGet#sortorder) usually `ASCENDING` or `DESCENDING`.
 

@@ -36,7 +36,7 @@ class DimensionFilter
         $this->dimensionFilter->setDimensionName($dimensionName);
     }
 
-    private function setExpression(string $expression)
+    private function setExpression($expression)
     {
         $this->dimensionFilter->setExpressions($expression);
     }
