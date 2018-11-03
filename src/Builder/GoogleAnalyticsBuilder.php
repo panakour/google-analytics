@@ -24,7 +24,7 @@ interface GoogleAnalyticsBuilder
 
     public function setOrder(array $order);
 
-    public function addAnalyticsReporting();
+    public function setAnalyticsReporting(array $params = []);
 
     public function setAnalyticsData();
 }

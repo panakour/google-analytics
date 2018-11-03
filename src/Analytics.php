@@ -74,4 +74,12 @@ class Analytics implements \Panakour\Analytics\Contracts\Analytics
             'parameters' => ['fieldName' => $fieldName, 'orderType' => $orderType, 'sortType' => $sortType],
         ];
     }
+
+    public function setAnalyticsReporting(array $params)
+    {
+        $this->analytics[] = [
+            'method'     => 'setAnalyticsReporting',
+            'parameters' => $params,
+        ];
+    }
 }

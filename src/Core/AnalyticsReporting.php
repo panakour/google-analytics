@@ -9,9 +9,11 @@ class AnalyticsReporting
 {
     private $analytics;
     private $body;
+    private $params;
 
-    public function __construct(Client $client, ReportRequest $request)
+    public function __construct(Client $client, ReportRequest $request, array $params)
     {
+        $this->params = $params;
         $this->create($client->get(), $request->get());
     }
 
@@ -24,6 +26,6 @@ class AnalyticsReporting
 
     public function get()
     {
-        return $this->analytics->reports->batchGet($this->body);
+        return $this->analytics->reports->batchGet($this->body, $this->params);
     }
 }

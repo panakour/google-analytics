@@ -21,4 +21,6 @@ interface Analytics
     public function setDimensionFilter(string $dimensionName, string $operator, $expression);
 
     public function setOrder(string $fieldName, string $orderType, string $sortType);
+
+    public function setAnalyticsReporting(array $params);
 }

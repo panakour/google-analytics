@@ -67,13 +67,16 @@ class AnalyticsBuilder implements GoogleAnalyticsBuilder
         $this->analytics->order = new Order($order, $this->analytics->request);
     }
 
-    public function addAnalyticsReporting()
+    public function setAnalyticsReporting(array $params = [])
     {
-        $this->analytics->analyticsReporting = new AnalyticsReporting($this->analytics->client, $this->analytics->request);
+        $this->analytics->analyticsReporting = new AnalyticsReporting($this->analytics->client, $this->analytics->request, $params);
     }
 
     public function setAnalyticsData()
     {
+        if (!property_exists($this->analytics, 'analyticsReporting')) {
+            $this->setAnalyticsReporting();
+        }
         $this->analytics->render = (new Renderable($this->analytics->analyticsReporting))->render();
     }
 }

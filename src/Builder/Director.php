@@ -35,7 +35,6 @@ class Director
 
     public function buildReport()
     {
-        $this->builder->addAnalyticsReporting();
         $this->builder->setAnalyticsData();
     }
 
