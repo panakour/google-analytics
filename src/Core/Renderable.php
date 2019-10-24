@@ -27,9 +27,11 @@ class Renderable
                 $dimensions = $row->getDimensions();
                 $metrics = $row->getMetrics();
 
-                for ($i = 0; $i < count($dimensionHeaders) && $i < count($dimensions); $i++) {
-                    $dimensionName = $dimensionHeaders[$i];
-                    $myReport[$rowIndex][$dimensionName] = $dimensions[$i];
+                if($dimensionHeaders && count($dimensionHeaders)) {
+                    for ($i = 0; $i < count($dimensionHeaders) && $i < count($dimensions); $i++) {
+                        $dimensionName = $dimensionHeaders[$i];
+                        $myReport[$rowIndex][$dimensionName] = $dimensions[$i];
+                    }
                 }
 
                 for ($j = 0; $j < count($metricHeaders) && $j < count($metrics); $j++) {
